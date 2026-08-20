@@ -202,9 +202,9 @@
                 </div>
             </div>
             <div data-poster-url="https://cdn.prod.website-files.com/674487be7e1ed3a8cab14877%2F67449077abb0bfe237e94bee_Snowfall-poster-00001.jpg" data-video-urls="https://cdn.prod.website-files.com/674487be7e1ed3a8cab14877%2F67449077abb0bfe237e94bee_Snowfall-transcode.mp4,https://cdn.prod.website-files.com/674487be7e1ed3a8cab14877%2F67449077abb0bfe237e94bee_Snowfall-transcode.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" class="snwofall-bg w-background-video w-background-video-atom">
-                <video id="4826f487-754f-c901-9c3f-a736e1c4b882-video" autoplay="" loop="" style="background-image:url(&quot;https://cdn.prod.website-files.com/674487be7e1ed3a8cab14877%2F67449077abb0bfe237e94bee_Snowfall-poster-00001.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
-                    <source src="https://cdn.prod.website-files.com/674487be7e1ed3a8cab14877%2F67449077abb0bfe237e94bee_Snowfall-transcode.mp4" data-wf-ignore="true"/>
-                    <source src="https://cdn.prod.website-files.com/674487be7e1ed3a8cab14877%2F67449077abb0bfe237e94bee_Snowfall-transcode.webm" data-wf-ignore="true"/>
+                <video id="4826f487-754f-c901-9c3f-a736e1c4b882-video" autoplay="" muted="" loop="" playsinline="" webkit-playsinline="" preload="auto" style="background-image:url(&quot;https://cdn.prod.website-files.com/674487be7e1ed3a8cab14877%2F67449077abb0bfe237e94bee_Snowfall-poster-00001.jpg&quot;)" data-wf-ignore="true" data-object-fit="cover">
+                    <source src="https://cdn.prod.website-files.com/674487be7e1ed3a8cab14877%2F67449077abb0bfe237e94bee_Snowfall-transcode.mp4" type="video/mp4" data-wf-ignore="true"/>
+                    <source src="https://cdn.prod.website-files.com/674487be7e1ed3a8cab14877%2F67449077abb0bfe237e94bee_Snowfall-transcode.webm" type="video/webm" data-wf-ignore="true"/>
                 </video>
             </div>
         </div>
@@ -841,6 +841,28 @@
             document.addEventListener('keydown', function (e) {
                 if (e.key === 'Escape') { closeNdaModal(); closeSuccessModal(); }
             });
+
+            /* ---- Snowfall background video: iOS autoplay fallback ------------ */
+            (function () {
+                var vid = document.getElementById('4826f487-754f-c901-9c3f-a736e1c4b882-video');
+                if (!vid) { return; }
+                function reducedMotion() {
+                    return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                }
+                function tryPlay() {
+                    if (reducedMotion()) { return; }
+                    var p = vid.play();
+                    if (p && typeof p.catch === 'function') { p.catch(function () {}); }
+                }
+                tryPlay();
+                vid.addEventListener('loadeddata', tryPlay);
+                vid.addEventListener('canplay', tryPlay);
+                ['touchstart', 'scroll', 'click'].forEach(function (evt) {
+                    document.addEventListener(evt, function () {
+                        if (vid.paused) { tryPlay(); }
+                    }, { once: true, passive: true });
+                });
+            })();
         </script>
     </body>
 </html>
