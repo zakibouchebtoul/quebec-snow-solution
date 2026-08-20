@@ -67,6 +67,15 @@
                 background: transparent; color: var(--color--paragraph-color); line-height: 1;
             }
             .nda-close:hover { background: rgba(255,255,255,.08); color: var(--color--font-color); }
+            .success-dialog { max-width: 420px; text-align: center; }
+            .success-icon {
+                width: 56px; height: 56px; margin: 0 auto 18px; border-radius: 50%;
+                background: rgba(56,189,248,.12); border: 1px solid rgba(56,189,248,.4);
+                color: #38bdf8; font-size: 26px; line-height: 1;
+                display: flex; align-items: center; justify-content: center;
+            }
+            .success-dialog .nda-desc { margin-bottom: 22px; }
+            .success-dialog .button.w-button { display: inline-block; }
             .nda-badge {
                 display: block; font-size: 11px; font-weight: 800; letter-spacing: .08em;
                 text-transform: uppercase; color: #38bdf8; margin-bottom: 6px;
@@ -592,6 +601,16 @@
                 </form>
             </div>
         </div>
+        <!-- Submission Success Popup -->
+        <div id="successModal" class="nda-overlay" onclick="if(event.target===this)closeSuccessModal()">
+            <div class="nda-dialog success-dialog" role="dialog" aria-modal="true" aria-labelledby="successTitle">
+                <button type="button" class="nda-close" aria-label="Close" onclick="closeSuccessModal()">&#10005;</button>
+                <div class="success-icon">&#10003;</div>
+                <h3 id="successTitle" data-i18n="modal_success_title">Request Submitted</h3>
+                <p class="nda-desc" data-i18n="alert_submit">Thank you! Your access request and NDA acknowledgement have been submitted. Our technical team will review your organization credentials and reach out with access details shortly.</p>
+                <button type="button" class="button w-button" onclick="closeSuccessModal()" data-i18n="btn_success_close">Close</button>
+            </div>
+        </div>
         <script>
             /* ---- SnowGo Quebec: EN/FR content dictionary ---------------------- */
             var translations = {
@@ -674,7 +693,9 @@
                     prob_icon2_desc: "Hauling and stockpiling snow adds trucking emissions and site costs.",
                     sol_icon1_desc: "Optimized energy use cuts fleet consumption and equipment wear.",
                     sol_icon2_desc: "Less scraping means smaller post-season road and curb repair bills.",
-                    alert_submit: "Thank you! Your access request and NDA acknowledgement have been submitted. Our technical team will review your organization credentials and reach out with access details shortly."
+                    alert_submit: "Thank you! Your access request and NDA acknowledgement have been submitted. Our technical team will review your organization credentials and reach out with access details shortly.",
+                    modal_success_title: "Request Submitted",
+                    btn_success_close: "Close"
                 },
                 fr: {
                     nav_impact: "Impact environnemental",
@@ -755,7 +776,9 @@
                     prob_icon2_desc: "Le transport et le stockage de la neige ajoutent des émissions de camionnage et des coûts de site.",
                     sol_icon1_desc: "Une énergie optimisée réduit la consommation de la flotte et l&#39;usure des équipements.",
                     sol_icon2_desc: "Moins de raclage, donc des factures de réparation de routes et bordures réduites.",
-                    alert_submit: "Merci ! Votre demande d&#39;acc\u00e8s et votre acceptation de l&#39;entente de confidentialit\u00e9 ont \u00e9t\u00e9 transmises. Notre \u00e9quipe technique examinera vos informations et vous contactera sous peu."
+                    alert_submit: "Merci ! Votre demande d&#39;acc\u00e8s et votre acceptation de l&#39;entente de confidentialit\u00e9 ont \u00e9t\u00e9 transmises. Notre \u00e9quipe technique examinera vos informations et vous contactera sous peu.",
+                    modal_success_title: "Demande envoy\u00e9e",
+                    btn_success_close: "Fermer"
                 }
             };
 
@@ -798,15 +821,25 @@
                 document.body.style.overflow = '';
             }
 
+            function openSuccessModal() {
+                document.getElementById('successModal').classList.add('is-open');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeSuccessModal() {
+                document.getElementById('successModal').classList.remove('is-open');
+                document.body.style.overflow = '';
+            }
+
             function handleNdaSubmit(event) {
                 event.preventDefault();
-                alert(translations[currentLang].alert_submit.replace(/&#39;/g, "'"));
                 event.target.reset();
                 closeNdaModal();
+                openSuccessModal();
             }
 
             document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape') { closeNdaModal(); }
+                if (e.key === 'Escape') { closeNdaModal(); closeSuccessModal(); }
             });
         </script>
     </body>
