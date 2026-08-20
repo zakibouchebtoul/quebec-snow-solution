@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<!-- This site was created in Webflow. https://webflow.com -->
+<!-- Last Published: Mon Dec 02 2024 17:27:52 GMT+0000 (Coordinated Universal Time) -->
+<html  data-wf-page=""  lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <link href="https://cdn.prod.website-files.com" rel="preconnect" crossorigin="anonymous"/>
+        <title>SNOWGO QUEBEC | Next-Gen Patented Snow Removal Technology</title>
+        <meta content="Patented snow removal technology that cuts emissions, protects road infrastructure, and lowers operating costs from season one." name="description"/>
+        <meta content="Patented snow removal technology that cuts emissions, protects road infrastructure, and lowers operating costs from season one." property="og:title"/>
+        <meta content="Patented snow removal technology that cuts emissions, protects road infrastructure, and lowers operating costs from season one." property="og:description"/>
+        <meta content="Patented snow removal technology that cuts emissions, protects road infrastructure, and lowers operating costs from season one." name="twitter:title"/>
+        <meta content="Patented snow removal technology that cuts emissions, protects road infrastructure, and lowers operating costs from season one." name="twitter:description"/>
+        <meta property="og:type" content="website"/>
+        <meta content="summary_large_image" name="twitter:card"/>
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+        <meta content="Webflow" name="generator"/>
+        <link href="styles/style.css" rel="stylesheet" type="text/css"/>
+        <link href="assets/webp/logo.png" rel="shortcut icon" type="image/x-icon"/>
+        <link href="assets/webp/logo.png" rel="apple-touch-icon"/>
+        <!-- SnowGo Quebec additions: language toggle, NDA modal -->
+        <style>
+            /* the template is an ecommerce theme; SnowGo does not sell online */
+            .menu-cart-holder [data-node-type="commerce-cart-wrapper"] { display: none !important; }
+
+            .lang-toggle {
+                display: inline-flex; gap: 2px; padding: 3px; margin-right: 12px;
+                border: 1px solid rgba(255,255,255,.18); border-radius: 8px;
+                background: rgba(255,255,255,.06); vertical-align: middle;
+            }
+            .lang-btn {
+                border: 0; cursor: pointer; padding: 5px 10px; border-radius: 6px;
+                font-size: 12px; font-weight: 700; line-height: 1; letter-spacing: .02em;
+                background: transparent; color: rgba(255,255,255,.6);
+                font-family: inherit; transition: background .15s ease, color .15s ease;
+            }
+            .lang-btn:hover { color: #fff; }
+            .lang-btn.is-active { background: #38bdf8; color: #0b1220; }
+
+            .menu-button.w-nav-button {
+                border: 1px solid rgba(255,255,255,.18); border-radius: 8px;
+                background: rgba(255,255,255,.06); color: rgba(255,255,255,.6);
+                transition: background .15s ease, color .15s ease, border-color .15s ease;
+            }
+            .menu-button.w-nav-button:hover { color: #fff; }
+            .menu-button.w-nav-button.w--open {
+                background: #38bdf8; color: #0b1220; border-color: #38bdf8;
+            }
+
+            .nda-overlay {
+                position: fixed; inset: 0; z-index: 9999; display: none;
+                align-items: center; justify-content: center; padding: 16px;
+                background: rgba(8,12,20,.82); backdrop-filter: blur(6px);
+            }
+            .nda-overlay.is-open { display: flex; }
+            .nda-dialog {
+                position: relative; width: 100%; max-width: 560px;
+                max-height: 90vh; overflow-y: auto; padding: 28px;
+                border: 1px solid var(--color--element-stroke); border-radius: 18px;
+                background: var(--color--element-bg-color); color: var(--color--font-color);
+                box-shadow: 0 30px 80px rgba(0,0,0,.6);
+                font-family: inherit; text-align: left;
+            }
+            .nda-close {
+                position: absolute; top: 14px; right: 14px; width: 34px; height: 34px;
+                border: 0; border-radius: 8px; cursor: pointer; font-size: 18px;
+                background: transparent; color: var(--color--paragraph-color); line-height: 1;
+            }
+            .nda-close:hover { background: rgba(255,255,255,.08); color: var(--color--font-color); }
+            .nda-badge {
+                display: block; font-size: 11px; font-weight: 800; letter-spacing: .08em;
+                text-transform: uppercase; color: #38bdf8; margin-bottom: 6px;
+            }
+            .nda-dialog h3 { margin: 0 0 8px; font-size: 24px; color: var(--color--font-color); }
+            .nda-desc { margin: 0 0 20px; font-size: 13px; line-height: 1.6; color: var(--color--paragraph-color); opacity: .8; }
+            .form-fields-holder > .nda-field { flex: 1; min-width: 0; }
+            .nda-field { margin-bottom: 14px; }
+            .nda-field label {
+                display: block; margin-bottom: 5px;
+                font-size: 12px; font-weight: 600; color: var(--color--paragraph-color);
+            }
+            .nda-field label.nda-terms-label {
+                font-size: 10px; font-weight: 400; color: #38bdf8;
+            }
+            .nda-terms {
+                height: 116px; overflow-y: auto; padding: 12px;
+                border: 1px solid var(--color--element-stroke); border-radius: 9px;
+                background: var(--color--background-color);
+            }
+            .nda-terms p {
+                margin: 0 0 8px;
+                font-size: 10px; font-weight: 300; line-height: 1.65; color: #38bdf8;
+            }
+            .nda-terms p:last-child { margin-bottom: 0; }
+            .nda-terms strong { color: #38bdf8; font-weight: 400; }
+            .nda-check { margin: 14px 0 18px; }
+            .custom-checkbox {
+                display: inline-flex; align-items: flex-start;
+                cursor: pointer; user-select: none;
+                font-size: 12px; line-height: 1.5; color: var(--color--paragraph-color);
+                transition: color .3s;
+            }
+            .custom-checkbox input[type="checkbox"] { display: none; }
+            .custom-checkbox .checkmark {
+                width: 18px; height: 18px; flex: none; margin-top: 1px; margin-right: 9px;
+                border: 2px solid var(--color--element-stroke); border-radius: 4px;
+                display: flex; align-items: center; justify-content: center;
+                transition: background-color .3s, border-color .3s, transform .3s;
+                transform-style: preserve-3d;
+            }
+            .custom-checkbox .checkmark::before {
+                content: "\2713"; font-size: 12px; color: transparent;
+                transition: color .3s, transform .3s;
+            }
+            .custom-checkbox input[type="checkbox"]:checked + .checkmark {
+                background-color: #38bdf8; border-color: #38bdf8;
+                transform: scale(1.1) rotateZ(360deg) rotateY(360deg);
+            }
+            .custom-checkbox input[type="checkbox"]:checked + .checkmark::before { color: #0b1220; }
+            .custom-checkbox:hover { color: var(--color--font-color); }
+            .custom-checkbox:hover .checkmark {
+                border-color: #38bdf8; background-color: rgba(56,189,248,.08); transform: scale(1.05);
+            }
+            .custom-checkbox input[type="checkbox"]:focus + .checkmark {
+                box-shadow: 0 0 3px 2px rgba(56,189,248,.35); outline: none;
+            }
+            @media (max-width: 479px) {
+                .nda-dialog { padding: 22px; }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="fixed-nav">
+            <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav">
+                <div class="container navbar-container">
+                    <div class="navbar-holder">
+                        <div class="navbar-container">
+                            <a href="/" aria-current="page" class="brand w-nav-brand w--current">
+                                <img src="assets/webp/logo.png" loading="lazy" alt="" class="brand-image"/>
+                            </a>
+                            <nav role="navigation" class="nav-menu w-nav-menu">
+                                <div class="nav-menu-link-holder">
+                                    <div class="nav-menu-link-container">
+                                        <div class="nav-links">
+                                            <a href="#impact" class="nav-link w-nav-link" data-i18n="nav_impact">Impact</a>
+                                            <a href="#savings" class="nav-link w-nav-link" data-i18n="nav_savings">Cost Savings</a>
+                                            <a href="#solution" class="nav-link w-nav-link" data-i18n="nav_solution">Process</a>
+                                            <a href="#aboutus" class="nav-link w-nav-link" data-i18n="nav_aboutus">About Us</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </nav>
+                            <div class="menu-cart-holder">
+                                <div class="menu-button w-nav-button">
+                                    <div class="w-icon-nav-menu"></div>
+                                </div>
+                                <div class="nav-menu-button-holder">
+                                    <a href="#" onclick="openNdaModal(event)" class="button w-button" data-i18n="btn_dossier">Request Dossier &amp; Specs</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-w-id="4826f487-754f-c901-9c3f-a736e1c4b86b" class="section overflow-hidden">
+            <div class="container">
+                <div class="hero-wrapper">
+                    <div class="hero-text-wrapper">
+                        <div class="animate-text-01">
+                            <h1 class="hero-text" data-i18n="hero_title">Next-Generation Patented Snow Removal Technology</h1>
+                        </div>
+                        <div class="animate-text-02">
+                            <div class="hero-paragraph-holder">
+                                <p data-i18n="hero_subtitle">Simultaneously eliminate operations-driven emissions, protect road infrastructure, and deliver immediate operational cost savings starting in Season One.</p>
+                            </div>
+                        </div>
+                        <div class="animate-text-03">
+                            <div class="button-wrapper">
+                                <a href="#" onclick="openNdaModal(event)" class="button w-button" data-i18n="hero_cta_primary">Access Specs — Sign NDA First</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="home-screen-app-holder">
+                        <div class="hero-section-app-container">
+                            <div class="shadow"></div>
+                            <div class="hero-section-phone-holder">
+                                <div class="hero-section-phone-screenshot-holder"></div>
+                                <div class="gradient"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-poster-url="https://cdn.prod.website-files.com/674487be7e1ed3a8cab14877%2F67449077abb0bfe237e94bee_Snowfall-poster-00001.jpg" data-video-urls="https://cdn.prod.website-files.com/674487be7e1ed3a8cab14877%2F67449077abb0bfe237e94bee_Snowfall-transcode.mp4,https://cdn.prod.website-files.com/674487be7e1ed3a8cab14877%2F67449077abb0bfe237e94bee_Snowfall-transcode.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" class="snwofall-bg w-background-video w-background-video-atom">
+                <video id="4826f487-754f-c901-9c3f-a736e1c4b882-video" autoplay="" loop="" style="background-image:url(&quot;https://cdn.prod.website-files.com/674487be7e1ed3a8cab14877%2F67449077abb0bfe237e94bee_Snowfall-poster-00001.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+                    <source src="https://cdn.prod.website-files.com/674487be7e1ed3a8cab14877%2F67449077abb0bfe237e94bee_Snowfall-transcode.mp4" data-wf-ignore="true"/>
+                    <source src="https://cdn.prod.website-files.com/674487be7e1ed3a8cab14877%2F67449077abb0bfe237e94bee_Snowfall-transcode.webm" data-wf-ignore="true"/>
+                </video>
+            </div>
+        </div>
+        <div class="section">
+            <div class="logos-wrapper">
+                <div class="fade-in-on-scroll">
+                    <div class="center-text">
+                        <p data-i18n="hero_tag">Engineered Specifically for North American Winter Conditions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="impact" class="section">
+            <div class="container">
+                <div class="section-spacing">
+                    <div class="center-text">
+                        <div class="fade-in-blur">
+                            <h2 data-i18n="impact_title">Smarter Snow Removal: Zero Transport, Lower Emissions, Immediate ROI.</h2>
+                        </div>
+                    </div>
+                    <div class="bento-grid-holder">
+                        <div class="bento-grid">
+                            <div data-w-id="7f1bf8cb-5c38-03f1-342d-0e593a4e7b7d" style="-webkit-transform:translate3d(0, 35px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 35px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 35px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 35px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);filter:blur(12px);opacity:0" class="bento-grid-wrapper">
+                                <div class="bento-grid-content">
+                                    <div class="bento-grid-text-holder">
+                                        <div class="bento-grid-text" data-i18n="impact_card1_title">Emission &amp; Particulate Reduction</div>
+                                        <p class="grey-text" data-i18n="impact_card1_desc">Significantly reduces heavy equipment burn cycles, cutting localized diesel emissions and fine particulate pollution during peak winter clearing operations.</p>
+                                    </div>
+                                    <img src="assets/webp/truck.png" loading="lazy" sizes="(max-width: 479px) 92vw, (max-width: 991px) 53vw, (max-width: 1439px) 34vw, 457px"  alt="" class="bento-grid-image"/>
+                                </div>
+                            </div>
+                            <div data-w-id="7d0656a7-2444-7fd0-1421-fdbdfe2fad51" style="-webkit-transform:translate3d(0, 35px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 35px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 35px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 35px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);filter:blur(12px);opacity:0" class="bento-grid-wrapper _02">
+                                <div class="bento-grid-content">
+                                    <img src="assets/webp/cards.png" loading="lazy" sizes="(max-width: 479px) 92vw, (max-width: 991px) 35vw, (max-width: 1439px) 22vw, 304px"  alt="" class="bento-grid-image _02"/>
+                                    <div class="bento-grid-text-holder _02">
+                                        <div class="bento-grid-text" data-i18n="impact_card2_title">Ground &amp; Infrastructure Defense</div>
+                                        <p class="grey-text" data-i18n="impact_card2_desc">Protects asphalt, curb lines, and sub-surface utilities from scraping and mechanical degradation.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="w-node-_89bba67e-55c8-6c30-1b5f-59ef2edf70a3-cab14862" data-w-id="89bba67e-55c8-6c30-1b5f-59ef2edf70a3" style="-webkit-transform:translate3d(0, 35px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 35px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 35px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 35px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);filter:blur(12px);opacity:0" class="bento-grid-wrapper">
+                                <div class="bento-grid-content">
+                                    <div class="bento-grid-text-holder">
+                                        <div class="bento-grid-text" data-i18n="impact_card3_title">North American Climate Adaptation</div>
+                                        <p class="grey-text" data-i18n="impact_card3_desc">Tailored to handle intense snowfall density, freeze-thaw cycles, and heavy municipal volume requirements specific to Canadian and Northern U.S. climates.</p>
+                                    </div>
+                                    <img src="assets/webp/NACA.png" loading="lazy" sizes="(max-width: 479px) 92vw, (max-width: 991px) 53vw, (max-width: 1439px) 34vw, 457px" alt="" class="bento-grid-image"/>
+                                </div>
+                            </div>
+                            <div id="w-node-b156eef9-a704-b83c-6767-7731f21046ff-cab14862" data-w-id="b156eef9-a704-b83c-6767-7731f21046ff" style="-webkit-transform:translate3d(0, 35px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 35px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 35px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 35px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);filter:blur(12px);opacity:0" class="bento-grid-wrapper">
+                                <div class="bento-grid-content _03">
+                                    <img src="assets/webp/pill.png" loading="lazy" sizes="(max-width: 479px) 92vw, (max-width: 991px) 24vw, (max-width: 1439px) 22vw, 306.1875px"  alt="" class="bento-grid-image _03"/>
+                                    <div class="bento-grid-text-holder _03">
+                                        <div class="bento-grid-text" data-i18n="impact_card4_title">Zero Transport</div>
+                                        <p class="grey-text" data-i18n="impact_card4_desc">Eliminates snow hauling and storage entirely.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="savings" class="section">
+            <div class="container">
+                <div class="section-spacing">
+                    <div class="center-text">
+                        <div class="fade-in-on-scroll">
+                            <h2 data-i18n="savings_title">Lower operational expenses from Day 1.</h2>
+                        </div>
+                        <div class="paragraph-holder xl">
+                            <p data-i18n="savings_lead">Our patented process re-architects energy utilization and operational logistics during clearing, delivering immediate, quantifiable cost and emissions savings in your very first operating season.</p>
+                        </div>
+                    </div>
+                    <div class="service-wrapper">
+                        <div class="service-holder inverted">
+                            <div class="service-content-holder">
+                                <div class="premium-section-content">
+                                    <div class="simple-heading">
+                                        <div class="fade-in-on-scroll">
+                                            <h5 class="no-margins" data-i18n="savings_problem_hdr">The Problem</h5>
+                                        </div>
+                                        <div class="fade-in-on-scroll">
+                                            <p class="grey-text" data-i18n="savings_problem">Traditional snow removal relies on massive fuel burn, causes rapid fleet wear, and drives up post-winter road repair budgets. Transports and snow storage sites add further environmental and financial strain through heavy carbon emissions, truck wear, and severe infrastructure erosion.</p>
+                                        </div>
+                                    </div>
+                                    <div class="premium-features">
+                                        <div class="premium-feature">
+                                            <div class="icon-holder">
+                                                <img src="assets/webp/fuel.png" loading="lazy" alt="" class="premium-small-icon"/>
+                                                <div class="icon-title" data-i18n="prob_icon1">Massive fuel burn</div>
+                                            </div>
+                                            <p class="grey-text" data-i18n="prob_icon1_desc">Heavy equipment burns fuel continuously through every clearing cycle.</p>
+                                        </div>
+                                        <div class="premium-feature">
+                                            <div class="icon-holder">
+                                                <img src="assets/webp/storage.png" loading="lazy" alt="" class="premium-small-icon"/>
+                                                <div class="icon-title" data-i18n="prob_icon2">Transport &amp; storage</div>
+                                            </div>
+                                            <p class="grey-text" data-i18n="prob_icon2_desc">Hauling and stockpiling snow adds trucking emissions and site costs.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-w-id="13a8ea23-b5da-3c24-3d84-cd8acbd4578e" style="-webkit-transform:translate3d(0, 35px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 35px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 35px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 35px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);filter:blur(12px);opacity:0" class="bento-grid-content">
+                                <img src="assets/webp/problem image.png" loading="lazy" sizes="(max-width: 479px) 92vw, (max-width: 991px) 93vw, (max-width: 1439px) 51vw, 696.6749877929688px"  alt="" class="feature-image"/>
+                            </div>
+                        </div>
+                        <div class="service-holder">
+                            <div data-w-id="15b0d9ba-22e6-b229-a651-02281a96add5" style="-webkit-transform:translate3d(0, 35px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 35px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 35px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 35px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);filter:blur(12px);opacity:0" class="bento-grid-content">
+                                <img src="assets/webp/solution.png" loading="lazy" sizes="(max-width: 479px) 92vw, (max-width: 991px) 93vw, (max-width: 1439px) 51vw, 696.6625366210938px"  alt="" class="feature-image"/>
+                            </div>
+                            <div class="service-content-holder">
+                                <div class="premium-section-content">
+                                    <div class="simple-heading">
+                                        <div class="fade-in-on-scroll">
+                                            <h5 class="no-margins" data-i18n="savings_solution_hdr">Our Solution</h5>
+                                        </div>
+                                        <div class="fade-in-on-scroll">
+                                            <p class="grey-text" data-i18n="savings_solution">Our patented process re-architects energy utilization and operational logistics during clearing. Fleet fuel consumption drops, post-season road and curb repair spending falls, and deployment stays compatible with existing municipal and commercial fleets.</p>
+                                        </div>
+                                    </div>
+                                    <div class="premium-features">
+                                        <div class="premium-feature">
+                                            <div class="icon-holder">
+                                                <img src="assets/webp/lowfuel.png" loading="lazy" alt="" class="premium-small-icon"/>
+                                                <div class="icon-title" data-i18n="sol_icon1">Lower fuel &amp; wear</div>
+                                            </div>
+                                            <p class="grey-text" data-i18n="sol_icon1_desc">Optimized energy use cuts fleet consumption and equipment wear.</p>
+                                        </div>
+                                        <div class="premium-feature">
+                                            <div class="icon-holder">
+                                                <img src="assets/webp/costs.png" loading="lazy" alt="" class="premium-small-icon"/>
+                                                <div class="icon-title" data-i18n="sol_icon2">Lower repair costs</div>
+                                            </div>
+                                            <p class="grey-text" data-i18n="sol_icon2_desc">Less scraping means smaller post-season road and curb repair bills.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="solution" class="section">
+            <div class="slider-overflow-hidden">
+                <div class="container">
+                    <div class="title-wrapper">
+                        <div class="title-left">
+                            <h3 class="no-marings" data-i18n="solution_title">How the Process Architecture Works</h3>
+                            <p data-i18n="solution_desc">A multi-stage process delivering a continuous, cost-effective workflow that combines maximum operational efficiency with a 100% eco-friendly footprint.</p>
+                        </div>
+                        <div class="title-button-holder">
+                            <a href="#impact" class="button w-button" data-i18n="hero_cta_secondary">Explore Process Architecture</a>
+                        </div>
+                    </div>
+                    <div class="feautre-slider-holder">
+                        <div data-delay="4000" data-animation="slide" class="feature-slider-wrapper w-slider" data-autoplay="false" data-easing="ease-out-expo" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="1250" data-infinite="true">
+                            <div class="feature-slider-mask w-slider-mask">
+                                <div class="feature-slide w-slide">
+                                    <div class="bento-grid-wrapper">
+                                        <div class="bento-grid-content">
+                                            <img src="assets/webp/stage1.png" loading="lazy" sizes="(max-width: 479px) 92vw, (max-width: 991px) 75vw, 668px"  alt="" class="bento-grid-image"/>
+                                            <div class="slider-text-holder">
+                                                <div class="bento-grid-text" data-i18n="stage1_title">Stage 01 &mdash; Low-Friction Collection</div>
+                                                <p class="grey-text" data-i18n="stage1_desc">Picks up and isolates snow without aggressive mechanical scraping against road surfaces.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="feature-slide w-slide">
+                                    <div class="bento-grid-wrapper">
+                                        <div class="bento-grid-content">
+                                            <img src="assets/webp/stage2.webp" loading="lazy" alt="" class="bento-grid-image"/>
+                                            <div class="slider-text-holder">
+                                                <div class="bento-grid-text" data-i18n="stage2_title">Stage 02 &mdash; Patented Core Processing</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="feature-slide w-slide">
+                                    <div class="bento-grid-wrapper">
+                                        <div class="bento-grid-content">
+                                            <img src="assets/webp/stage3.webp" loading="lazy" sizes="(max-width: 479px) 92vw, (max-width: 991px) 75vw, 668px"  alt="" class="bento-grid-image"/>
+                                            <div class="slider-text-holder">
+                                                <div class="bento-grid-text" data-i18n="stage3_title">Stage 03 &mdash; On-Site Elimination</div>
+                                                <p class="grey-text" data-i18n="stage3_desc">High-efficiency evacuation requiring minimal transit and zero secondary handling overhead.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="feature-slide w-slide">
+                                    <div class="bento-grid-wrapper">
+                                        <div class="bento-grid-content">
+                                            <img src="assets/webp/stage4.png" loading="lazy" sizes="(max-width: 479px) 92vw, (max-width: 991px) 75vw, 668px"  alt="" class="bento-grid-image"/>
+                                            <div class="slider-text-holder">
+                                                <div class="bento-grid-text" data-i18n="bullet1_title">Lower Fuel &amp; Equipment Wear</div>
+                                                <p class="grey-text" data-i18n="bullet1_desc">Direct reduction in fleet fuel consumption and equipment wear.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="feature-slide w-slide">
+                                    <div class="bento-grid-wrapper">
+                                        <div class="bento-grid-content">
+                                            <img src="assets/webp/budget.png" loading="lazy" alt="" class="bento-grid-image"/>
+                                            <div class="slider-text-holder">
+                                                <div class="bento-grid-text" data-i18n="bullet2_title">Lower Repair Budgets</div>
+                                                <p class="grey-text" data-i18n="bullet2_desc">Substantial drop in post-season road and curb repair expenditures.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="feature-slide w-slide">
+                                    <div class="bento-grid-wrapper">
+                                        <div class="bento-grid-content">
+                                            <img src="assets/webp/rapide.png" loading="lazy" sizes="(max-width: 479px) 92vw, (max-width: 991px) 75vw, 668px"  alt="" class="bento-grid-image"/>
+                                            <div class="slider-text-holder">
+                                                <div class="bento-grid-text" data-i18n="bullet3_title">Rapid Deployment</div>
+                                                <p class="grey-text" data-i18n="bullet3_desc">Compatible with existing municipal and commercial fleets.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="left-arrow w-slider-arrow-left">
+                                <div class="slider-arrow-circle">
+                                    <img src="https://cdn.prod.website-files.com/674487be7e1ed3a8cab14877/674487be7e1ed3a8cab148ae_Arrow%20Button.svg" loading="lazy" alt="" class="slider-arrow-icon left"/>
+                                </div>
+                            </div>
+                            <div class="right-arrow w-slider-arrow-right">
+                                <div class="slider-arrow-circle">
+                                    <img src="https://cdn.prod.website-files.com/674487be7e1ed3a8cab14877/674487be7e1ed3a8cab148ae_Arrow%20Button.svg" loading="lazy" alt="" class="slider-arrow-icon"/>
+                                </div>
+                            </div>
+                            <div class="gradient-slider"></div>
+                            <div class="gradient-slider left"></div>
+                            <div class="hide w-slider-nav w-round w-num"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="aboutus" class="section">
+            <div class="container">
+                <div class="section-spacing">
+                    <div class="center-text">
+                        <div class="fade-in-on-scroll">
+                            <h2 data-i18n="about_title">About Us</h2>
+                        </div>
+                        <div class="paragraph-holder xl">
+                            <p class="grey-text" data-i18n="about_p1">Our organization is committed to delivering products and services that are environmentally responsible, operationally efficient, and socially sustainable. Every innovation we introduce is designed to reduce ecological impact while protecting the workforce that makes our mission possible.</p>
+                            <p class="grey-text" data-i18n="about_p2">We prioritize green materials, low-emission processes, and eco-friendly technologies that help protect water, soil, and air quality. By improving efficiency and reducing waste of salt and fuel, we contribute to a cleaner environment and a healthier community.</p>
+                            <p class="grey-text" data-i18n="about_p3">At the same time, we firmly believe that environmental progress must never come at the cost of people&#39;s livelihoods. Our transition toward greener operations is built on a model that preserves existing jobs, creates new opportunities, and upskills employees for the future. Sustainability is not only about protecting nature &mdash; it is also about protecting families, workers, and the stability of our communities.</p>
+                            <p class="grey-text" data-i18n="about_p4">Through responsible innovation, we demonstrate that a company can be green, competitive, and people-centered all at once. Our goal is simple: a cleaner environment, stronger operations, and a workforce that grows with us.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="partners" class="section overflow-hidden">
+    
+            <div class="container">
+                <div data-w-id="87bcb4ce-7703-a72e-8949-eb8897339331" class="premium-section">
+                    <div class="center-text">
+                        <div class="fade-in-on-scroll">
+                            <div class="title-holder">
+                                <h2 data-i18n="cta_title">Bring Next-Gen Snow Removal to Your Fleet</h2>
+                            </div>
+                        </div>
+                        <div class="paragraph-holder l">
+                            <p data-i18n="cta_desc">We are selectively onboarding North American municipal partners, infrastructure directors, and large commercial snow operators for upcoming winter pilots and licensing opportunities.</p>
+                        </div>
+                    </div>
+                    <div class="fade-in-on-scroll">
+                        <div class="form-block w-form">
+                            <form id="Early-Access-Emails" name="wf-form-Early-Access-Emails" data-name="Early Access Emails" method="get" class="form-holder" data-wf-page-id="" data-wf-element-id="faf2f97c-1abd-a8bc-e52a-8b85160219ed">
+                                <div class="form">
+                                    <a href="#" onclick="openNdaModal(event)" class="button w-button" data-i18n="cta_btn">Execute NDA &amp; Request Technical Dossier</a>
+                                </div>
+                            </form>
+                            <div class="thank-you-message w-form-done">
+                                <div>
+                                    <span class="white-text">Thank you! </span>
+                                    <br/>Your submission has been received!
+                                </div>
+                            </div>
+                            <div class="error-message w-form-fail">
+                                <div>
+                                    <span class="white-text">
+                                        Oops! <br/>
+                                    </span>
+                                    Something went wrong! Try again later
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="footer">
+                <div class="container">
+                    <div class="footer-wrapper">
+                        <a href="/" aria-current="page" class="footer-brand w-inline-block w--current">
+                            <img src="assets/webp/logo.png" loading="lazy" alt="" class="footer-brand-image"/>
+                            <div class="footer-paragraph-holder">
+                                <p data-i18n="footer_patents">Protected under North American and international patent filings.</p>
+                            </div>
+                        </a>
+                        <div class="footer-content">
+                            <div id="w-node-e92bf484-a605-4132-f141-4518468af7e2-468af7d9" class="footer-block">
+                                <div class="title-small" data-i18n="footer_nav_hdr">Navigate</div>
+                                <a href="#impact" class="footer-link" data-i18n="nav_impact">Environmental Impact</a>
+                                <a href="#savings" class="footer-link" data-i18n="nav_savings">Cost Savings</a>
+                                <a href="#solution" class="footer-link" data-i18n="nav_solution">Patented Process</a>
+                            </div>
+                            <div id="w-node-e92bf484-a605-4132-f141-4518468af7ef-468af7d9" class="footer-block">
+                                <div class="title-small" data-i18n="footer_legal_hdr">Legal</div>
+                                <a href="#" class="footer-link" data-i18n="footer_privacy">Privacy Policy</a>
+                                <a href="#" class="footer-link" data-i18n="footer_terms">Terms of Evaluation</a>
+                                <a href="#" class="footer-link" data-i18n="footer_ip">IP Disclosure Notice</a>
+                                
+                            </div>
+                            <div id="w-node-e92bf484-a605-4132-f141-4518468af7fa-468af7d9" class="footer-block">
+                                <div class="title-small" data-i18n="footer_company_hdr">Company</div>
+                                <a href="#aboutus" class="footer-link" data-i18n="nav_aboutus">About Us</a>
+                                <a href="#" onclick="openNdaModal(event)" class="footer-link" data-i18n="btn_dossier">Request Dossier &amp; Specs</a>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-divider">
+                        <div class="footer-copyright-holder">
+                            <div class="footer-copyright-center">
+                                <span data-i18n="footer_copy">&copy; 2026 Snowgo Quebec Inc. All Rights Reserved.</span>
+                            </div>
+                        </div>
+                        <div class="footer-copyright-holder">
+                            <div class="footer-copyright-center">
+                                <span data-i18n="footer_patents2">Protected under North American and international patent filings.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="scripts/jquery-3.5.1.min.js" type="text/javascript"></script>
+        <script src="scripts/script.js" type="text/javascript"></script>
+        <!-- NDA & Access Request Modal -->
+        <div id="ndaModal" class="nda-overlay" onclick="if(event.target===this)closeNdaModal()">
+            <div class="nda-dialog" role="dialog" aria-modal="true" aria-labelledby="ndaTitle">
+                <button type="button" class="nda-close" aria-label="Close" onclick="closeNdaModal()">&#10005;</button>
+                <span class="nda-badge" data-i18n="modal_badge">Confidential Evaluation Request</span>
+                <h3 id="ndaTitle" data-i18n="modal_title">Technical Dossier Access</h3>
+                <p class="nda-desc" data-i18n="modal_desc">Please provide your organization details and agree to the non-disclosure terms to receive our confidential technical whitepaper and pilot benchmark data.</p>
+                <form onsubmit="handleNdaSubmit(event)">
+                    <div class="form-fields-holder">
+                        <div class="nda-field">
+                            <label for="ndaFirst" data-i18n="lbl_fname">First Name *</label>
+                            <input class="text-field w-input" id="ndaFirst" type="text" required placeholder="Jean / John"/>
+                        </div>
+                        <div class="nda-field">
+                            <label for="ndaLast" data-i18n="lbl_lname">Last Name *</label>
+                            <input class="text-field w-input" id="ndaLast" type="text" required placeholder="Tremblay / Doe"/>
+                        </div>
+                    </div>
+                    <div class="nda-field">
+                        <label for="ndaEmail" data-i18n="lbl_email">Work / Organization Email *</label>
+                        <input class="text-field w-input" id="ndaEmail" type="email" required placeholder="j.tremblay@ville.laval.qc.ca"/>
+                    </div>
+                    <div class="nda-field">
+                        <label for="ndaOrg" data-i18n="lbl_org">Municipality / Organization Name *</label>
+                        <input class="text-field w-input" id="ndaOrg" type="text" required placeholder="Ville de Laval / Public Works Dept"/>
+                    </div>
+                    <div class="nda-field">
+                        <label class="nda-terms-label" data-i18n="lbl_nda_hdr">Non-Disclosure &amp; Confidentiality Terms</label>
+                        <div class="nda-terms">
+                            <p id="nda_term1"><strong>1. Purpose:</strong> The information provided in the requested snow removal technical dossier is confidential and intended solely for the evaluation of potential municipal pilot projects or corporate licensing agreements.</p>
+                            <p id="nda_term2"><strong>2. Confidentiality:</strong> The recipient agrees to hold all process specifications, performance benchmarks, and equipment diagrams in strict confidence and will not publish or disclose them to third parties.</p>
+                            <p id="nda_term3"><strong>3. Intellectual Property:</strong> Access to this documentation does not grant any explicit or implicit rights, licenses, or ownership of the underlying patented snow removal process.</p>
+                        </div>
+                    </div>
+                    <div class="nda-check">
+                        <label class="custom-checkbox">
+                            <input id="ndaCheck" type="checkbox" required/>
+                            <span class="checkmark"></span>
+                            <span data-i18n="lbl_nda_check">I confirm that I am an authorized representative of my organization and agree to the Confidentiality Terms above. *</span>
+                        </label>
+                    </div>
+                    <button type="submit" class="button w-button" data-i18n="btn_modal_submit">Submit Access Request &amp; Sign NDA</button>
+                </form>
+            </div>
+        </div>
+        <script>
+            /* ---- SnowGo Quebec: EN/FR content dictionary ---------------------- */
+            var translations = {
+                en: {
+                    nav_impact: "Environmental Impact",
+                    nav_savings: "Cost Savings",
+                    nav_solution: "Patented Process",
+                    nav_partners: "Pilot Program",
+                    nav_aboutus: "About Us",
+                    btn_dossier: "Request Dossier &amp; Specs",
+                    hero_title: "Next-Generation Patented Snow Removal Technology",
+                    hero_subtitle: "Simultaneously eliminate operations-driven emissions, protect road infrastructure, and deliver immediate operational cost savings starting in Season One.",
+                    hero_cta_primary: "Request Technical Specs (NDA Required)",
+                    hero_cta_secondary: "Explore Process Architecture",
+                    hero_tag: "Engineered Specifically for North American Winter Conditions",
+                    impact_title: "Smarter Snow Removal: Zero Transport, Lower Emissions, Immediate ROI.",
+                    impact_card1_title: "Emission &amp; Particulate Reduction",
+                    impact_card1_desc: "Significantly reduces heavy equipment burn cycles, cutting localized diesel emissions and fine particulate pollution during peak winter clearing operations.",
+                    impact_card2_title: "Ground &amp; Infrastructure Defense",
+                    impact_card2_desc: "Protects asphalt, curb lines, and sub-surface utilities from scraping and mechanical degradation.",
+                    impact_card3_title: "North American Climate Adaptation",
+                    impact_card3_desc: "Tailored to handle intense snowfall density, freeze-thaw cycles, and heavy municipal volume requirements specific to Canadian and Northern U.S. climates.",
+                    impact_card4_title: "Zero Transport",
+                    impact_card4_desc: "Eliminates snow hauling and storage entirely.",
+                    savings_title: "Lower operational expenses from Day 1.",
+                    savings_lead: "Our patented process re-architects energy utilization and operational logistics during clearing, delivering immediate, quantifiable cost and emissions savings in your very first operating season.",
+                    savings_problem_hdr: "The Problem",
+                    savings_problem: "Traditional snow removal relies on massive fuel burn, causes rapid fleet wear, and drives up post-winter road repair budgets. Transports and snow storage sites add further environmental and financial strain through heavy carbon emissions, truck wear, and severe infrastructure erosion.",
+                    prob_icon1: "Massive fuel burn",
+                    prob_icon2: "Transport &amp; storage",
+                    savings_solution_hdr: "Our Solution",
+                    savings_solution: "Our patented process re-architects energy utilization and operational logistics during clearing. Fleet fuel consumption drops, post-season road and curb repair spending falls, and deployment stays compatible with existing municipal and commercial fleets.",
+                    sol_icon1: "Lower fuel &amp; wear",
+                    sol_icon2: "Lower repair costs",
+                    solution_title: "How the Process Architecture Works",
+                    solution_desc: "A multi-stage process delivering a continuous, cost-effective workflow that combines maximum operational efficiency with a 100% eco-friendly footprint.",
+                    stage1_title: "Stage 01 &mdash; Low-Friction Collection",
+                    stage1_desc: "Picks up and isolates snow without aggressive mechanical scraping against road surfaces.",
+                    stage2_title: "Stage 02 &mdash; Patented Core Processing",
+                    stage2_desc: "Proprietary thermal-mechanical transfer alters volume density rapidly with reduced energy input.",
+                    stage3_title: "Stage 03 &mdash; On-Site Elimination",
+                    stage3_desc: "High-efficiency evacuation requiring minimal transit and zero secondary handling overhead.",
+                    bullet1_title: "Lower Fuel &amp; Equipment Wear",
+                    bullet1_desc: "Direct reduction in fleet fuel consumption and equipment wear.",
+                    bullet2_title: "Lower Repair Budgets",
+                    bullet2_desc: "Substantial drop in post-season road and curb repair expenditures.",
+                    bullet3_title: "Rapid Deployment",
+                    bullet3_desc: "Compatible with existing municipal and commercial fleets.",
+                    about_title: "About Us",
+                    about_p1: "Our organization is committed to delivering products and services that are environmentally responsible, operationally efficient, and socially sustainable. Every innovation we introduce is designed to reduce ecological impact while protecting the workforce that makes our mission possible.",
+                    about_p2: "We prioritize green materials, low-emission processes, and eco-friendly technologies that help protect water, soil, and air quality. By improving efficiency and reducing waste of salt and fuel, we contribute to a cleaner environment and a healthier community.",
+                    about_p3: "At the same time, we firmly believe that environmental progress must never come at the cost of people&#39;s livelihoods. Our transition toward greener operations is built on a model that preserves existing jobs, creates new opportunities, and upskills employees for the future. Sustainability is not only about protecting nature &mdash; it is also about protecting families, workers, and the stability of our communities.",
+                    about_p4: "Through responsible innovation, we demonstrate that a company can be green, competitive, and people-centered all at once. Our goal is simple: a cleaner environment, stronger operations, and a workforce that grows with us.",
+                    cta_title: "Bring Next-Gen Snow Removal to Your Fleet",
+                    cta_desc: "We are selectively onboarding North American municipal partners, infrastructure directors, and large commercial snow operators for upcoming winter pilots and licensing opportunities.",
+                    cta_btn: "Execute NDA &amp; Request Technical Dossier",
+                    footer_patents: "Protected under North American and international patent filings.",
+                    footer_patents2: "Protected under North American and international patent filings.",
+                    footer_nav_hdr: "Navigate",
+                    footer_legal_hdr: "Legal",
+                    footer_company_hdr: "Company",
+                    footer_privacy: "Privacy Policy",
+                    footer_terms: "Terms of Evaluation",
+                    footer_ip: "IP Disclosure Notice",
+                    footer_copy: "&copy; 2026 Snowgo Quebec Inc. All Rights Reserved.",
+                    modal_badge: "Confidential Evaluation Request",
+                    modal_title: "Technical Dossier Access",
+                    modal_desc: "Please provide your organization details and agree to the non-disclosure terms to receive our confidential technical whitepaper and pilot benchmark data.",
+                    lbl_fname: "First Name *",
+                    lbl_lname: "Last Name *",
+                    lbl_email: "Work / Organization Email *",
+                    lbl_org: "Municipality / Organization Name *",
+                    lbl_nda_hdr: "Non-Disclosure &amp; Confidentiality Terms",
+                    lbl_nda_check: "I confirm that I am an authorized representative of my organization and agree to the Confidentiality Terms above. *",
+                    btn_modal_submit: "Submit Access Request &amp; Sign NDA",
+                    nda_term1: "<strong>1. Purpose:</strong> The information provided in the requested snow removal technical dossier is confidential and intended solely for the evaluation of potential municipal pilot projects or corporate licensing agreements.",
+                    nda_term2: "<strong>2. Confidentiality:</strong> The recipient agrees to hold all process specifications, performance benchmarks, and equipment diagrams in strict confidence and will not publish or disclose them to third parties.",
+                    nda_term3: "<strong>3. Intellectual Property:</strong> Access to this documentation does not grant any explicit or implicit rights, licenses, or ownership of the underlying patented snow removal process.",
+                    prob_icon1_desc: "Heavy equipment burns fuel continuously through every clearing cycle.",
+                    prob_icon2_desc: "Hauling and stockpiling snow adds trucking emissions and site costs.",
+                    sol_icon1_desc: "Optimized energy use cuts fleet consumption and equipment wear.",
+                    sol_icon2_desc: "Less scraping means smaller post-season road and curb repair bills.",
+                    alert_submit: "Thank you! Your access request and NDA acknowledgement have been submitted. Our technical team will review your organization credentials and reach out with access details shortly."
+                },
+                fr: {
+                    nav_impact: "Impact environnemental",
+                    nav_savings: "\u00c9conomies financi\u00e8res",
+                    nav_solution: "Proc\u00e9d\u00e9 brevet\u00e9",
+                    nav_partners: "Projets pilotes",
+                    nav_aboutus: "\u00c0 propos",
+                    btn_dossier: "Demander le dossier technique",
+                    hero_title: "Technologie brevet\u00e9e de d\u00e9neigement de nouvelle g\u00e9n\u00e9ration",
+                    hero_subtitle: "\u00c9liminez simultan\u00e9ment les \u00e9missions li\u00e9es aux op\u00e9rations, prot\u00e9gez les infrastructures routi\u00e8res et r\u00e9alisez des \u00e9conomies op\u00e9rationnelles imm\u00e9diates d\u00e8s la premi\u00e8re saison.",
+                    hero_cta_primary: "Obtenir les sp\u00e9cifications (NDA requis)",
+                    hero_cta_secondary: "D\u00e9couvrir l&#39;architecture du proc\u00e9d\u00e9",
+                    hero_tag: "Con\u00e7u sp\u00e9cifiquement pour les conditions hivernales nord-am\u00e9ricaines",
+                    impact_title: "D\u00e9neigement intelligent : z\u00e9ro transport, \u00e9missions r\u00e9duites, ROI imm\u00e9diat.",
+                    impact_card1_title: "R\u00e9duction des \u00e9missions et particules",
+                    impact_card1_desc: "R\u00e9duit consid\u00e9rablement les cycles de combustion des \u00e9quipements lourds, diminuant les \u00e9missions de diesel et la pollution par particules fines lors des op\u00e9rations d&#39;\u00e9vacuation.",
+                    impact_card2_title: "Protection des sols et infrastructures",
+                    impact_card2_desc: "Prot\u00e8ge l&#39;asphalte, les bordures et les r\u00e9seaux souterrains contre le raclage et la d\u00e9gradation m\u00e9canique.",
+                    impact_card3_title: "Adaptation au climat nord-am\u00e9ricain",
+                    impact_card3_desc: "Con\u00e7u pour traiter la densit\u00e9 de neige \u00e9lev\u00e9e, les cycles de gel-d\u00e9gel et les volumes importants propres aux climats canadien et du nord des \u00c9tats-Unis.",
+                    impact_card4_title: "Z\u00e9ro transport",
+                    impact_card4_desc: "\u00c9limine compl\u00e8tement le transport et l&#39;entreposage de la neige.",
+                    savings_title: "Des d\u00e9penses op\u00e9rationnelles r\u00e9duites d\u00e8s le premier jour.",
+                    savings_lead: "Notre proc\u00e9d\u00e9 brevet\u00e9 repense l&#39;utilisation de l&#39;\u00e9nergie et la logistique op\u00e9rationnelle pendant le d\u00e9neigement, g\u00e9n\u00e9rant des \u00e9conomies de co\u00fbts et d&#39;\u00e9missions imm\u00e9diates et mesurables d\u00e8s votre toute premi\u00e8re saison d&#39;exploitation.",
+                    savings_problem_hdr: "Le probl\u00e8me",
+                    savings_problem: "Le d\u00e9neigement traditionnel repose sur une consommation massive de carburant, provoque une usure rapide de la flotte et fait grimper les budgets de r\u00e9paration routi\u00e8re au printemps. Le transport et les sites d&#39;entreposage de la neige ajoutent une pression environnementale et financi\u00e8re suppl\u00e9mentaire : \u00e9missions de carbone \u00e9lev\u00e9es, usure des camions et \u00e9rosion s\u00e9v\u00e8re des infrastructures.",
+                    prob_icon1: "Carburant massif",
+                    prob_icon2: "Transport &amp; entreposage",
+                    savings_solution_hdr: "Notre solution",
+                    savings_solution: "Notre proc\u00e9d\u00e9 brevet\u00e9 repense l&#39;utilisation de l&#39;\u00e9nergie et la logistique op\u00e9rationnelle pendant le d\u00e9neigement. La consommation de carburant chute, les d\u00e9penses de r\u00e9paration des routes et bordures diminuent, et le d\u00e9ploiement reste compatible avec les flottes municipales et commerciales existantes.",
+                    sol_icon1: "Moins de carburant",
+                    sol_icon2: "Moins de r\u00e9parations",
+                    solution_title: "Fonctionnement de l&#39;architecture du syst\u00e8me",
+                    solution_desc: "Un proc\u00e9d\u00e9 multi-\u00e9tape offrant un flux de travail continu et rentable, alliant une efficacit\u00e9 op\u00e9rationnelle maximale \u00e0 une empreinte 100 % \u00e9cologique.",
+                    stage1_title: "\u00c9tape 01 &mdash; Collecte \u00e0 faible friction",
+                    stage1_desc: "Capte et isole la neige sans grattage m\u00e9canique agressif contre la chauss\u00e9e.",
+                    stage2_title: "\u00c9tape 02 &mdash; C\u0153ur brevet\u00e9 du proc\u00e9d\u00e9",
+                    stage2_desc: "Transfert thermo-m\u00e9canique propri\u00e9taire modifiant rapidement la densit\u00e9 volumique avec un apport \u00e9nerg\u00e9tique r\u00e9duit.",
+                    stage3_title: "\u00c9tape 03 &mdash; \u00c9limination sur place",
+                    stage3_desc: "\u00c9vacuation \u00e0 haute efficacit\u00e9 n\u00e9cessitant un transport minimal et aucune manutention secondaire.",
+                    bullet1_title: "Moins de carburant et d&#39;usure",
+                    bullet1_desc: "R\u00e9duction directe de la consommation de carburant et de l&#39;usure des \u00e9quipements.",
+                    bullet2_title: "Budgets de r\u00e9paration r\u00e9duits",
+                    bullet2_desc: "Baisse substantielle des co\u00fbts de r\u00e9paration des routes et bordures apr\u00e8s la saison.",
+                    bullet3_title: "D\u00e9ploiement rapide",
+                    bullet3_desc: "Compatible avec les flottes municipales et commerciales existantes.",
+                    about_title: "\u00c0 propos",
+                    about_p1: "Notre organisation s&#39;engage \u00e0 offrir des produits et des services respectueux de l&#39;environnement, efficaces sur le plan op\u00e9rationnel et socialement durables. Chaque innovation que nous introduisons vise \u00e0 r\u00e9duire l&#39;impact \u00e9cologique tout en prot\u00e9geant la main-d&#39;\u0153uvre qui rend notre mission possible.",
+                    about_p2: "Nous privil\u00e9gions les mat\u00e9riaux verts, les proc\u00e9d\u00e9s \u00e0 faibles \u00e9missions et les technologies \u00e9cologiques qui contribuent \u00e0 prot\u00e9ger la qualit\u00e9 de l&#39;eau, des sols et de l&#39;air. En am\u00e9liorant l&#39;efficacit\u00e9 et en r\u00e9duisant le gaspillage de sel et de carburant, nous contribuons \u00e0 un environnement plus propre et \u00e0 une communaut\u00e9 en meilleure sant\u00e9.",
+                    about_p3: "En parall\u00e8le, nous croyons fermement que le progr\u00e8s environnemental ne doit jamais se faire au d\u00e9triment du gagne-pain des gens. Notre transition vers des op\u00e9rations plus vertes repose sur un mod\u00e8le qui pr\u00e9serve les emplois existants, cr\u00e9e de nouvelles occasions et perfectionne les comp\u00e9tences des employ\u00e9s pour l&#39;avenir. La durabilit\u00e9 ne consiste pas seulement \u00e0 prot\u00e9ger la nature &mdash; il s&#39;agit aussi de prot\u00e9ger les familles, les travailleurs et la stabilit\u00e9 de nos communaut\u00e9s.",
+                    about_p4: "Par une innovation responsable, nous d\u00e9montrons qu&#39;une entreprise peut \u00eatre verte, comp\u00e9titive et centr\u00e9e sur les personnes \u00e0 la fois. Notre objectif est simple : un environnement plus propre, des op\u00e9rations plus solides et une main-d&#39;\u0153uvre qui grandit avec nous.",
+                    cta_title: "Int\u00e9grez le d\u00e9neigement de nouvelle g\u00e9n\u00e9ration \u00e0 votre flotte",
+                    cta_desc: "Nous s\u00e9lectionnons actuellement des partenaires municipaux nord-am\u00e9ricains, des directeurs d&#39;infrastructures et des entrepreneurs priv\u00e9s majeurs pour nos prochains projets pilotes et opportunit\u00e9s de licence.",
+                    cta_btn: "Signer l&#39;entente de confidentialit\u00e9 &amp; obtenir le dossier",
+                    footer_patents: "Prot\u00e9g\u00e9 par des brevets d\u00e9pos\u00e9s en Am\u00e9rique du Nord et \u00e0 l&#39;international.",
+                    footer_patents2: "Prot\u00e9g\u00e9 par des brevets d\u00e9pos\u00e9s en Am\u00e9rique du Nord et \u00e0 l&#39;international.",
+                    footer_nav_hdr: "Navigation",
+                    footer_legal_hdr: "Mentions l\u00e9gales",
+                    footer_company_hdr: "Entreprise",
+                    footer_privacy: "Politique de confidentialit\u00e9",
+                    footer_terms: "Conditions d&#39;\u00e9valuation",
+                    footer_ip: "Avis de propri\u00e9t\u00e9 intellectuelle",
+                    footer_copy: "&copy; 2026 Snowgo Quebec Inc. Tous droits r\u00e9serv\u00e9s.",
+                    modal_badge: "Demande d&#39;\u00e9valuation confidentielle",
+                    modal_title: "Acc\u00e8s au dossier technique",
+                    modal_desc: "Veuillez fournir les d\u00e9tails de votre organisation et accepter les conditions de confidentialit\u00e9 pour recevoir notre livre blanc technique et nos donn\u00e9es d&#39;essais pilotes.",
+                    lbl_fname: "Pr\u00e9nom *",
+                    lbl_lname: "Nom *",
+                    lbl_email: "Courriel professionnel / d&#39;organisation *",
+                    lbl_org: "Municipalit\u00e9 / Nom de l&#39;organisation *",
+                    lbl_nda_hdr: "Termes de confidentialit\u00e9 et non-divulgation",
+                    lbl_nda_check: "Je confirme \u00eatre un repr\u00e9sentant autoris\u00e9 de mon organisation et j&#39;accepte les termes de confidentialit\u00e9 ci-dessus. *",
+                    btn_modal_submit: "Soumettre la demande et signer l&#39;entente (NDA)",
+                    nda_term1: "<strong>1. Objet :</strong> Les informations contenues dans le dossier technique sont confidentielles et destin\u00e9es uniquement \u00e0 l&#39;\u00e9valuation de projets pilotes municipaux ou de partenariats de licence.",
+                    nda_term2: "<strong>2. Confidentialit\u00e9 :</strong> Le destinataire s&#39;engage \u00e0 maintenir strictement confidentielles l&#39;ensemble des sp\u00e9cifications, benchmarks de performance et sch\u00e9mas d&#39;\u00e9quipements, sans les publier ni les divulguer.",
+                    nda_term3: "<strong>3. Propri\u00e9t\u00e9 intellectuelle :</strong> L&#39;acc\u00e8s \u00e0 cette documentation ne conf\u00e8re aucun droit, licence ou propri\u00e9t\u00e9 explicite ou implicite sur le proc\u00e9d\u00e9 de d\u00e9neigement brevet\u00e9.",
+                    prob_icon1_desc: "Les équipements lourds brûlent du carburant en continu à chaque cycle de déneigement.",
+                    prob_icon2_desc: "Le transport et le stockage de la neige ajoutent des émissions de camionnage et des coûts de site.",
+                    sol_icon1_desc: "Une énergie optimisée réduit la consommation de la flotte et l&#39;usure des équipements.",
+                    sol_icon2_desc: "Moins de raclage, donc des factures de réparation de routes et bordures réduites.",
+                    alert_submit: "Merci ! Votre demande d&#39;acc\u00e8s et votre acceptation de l&#39;entente de confidentialit\u00e9 ont \u00e9t\u00e9 transmises. Notre \u00e9quipe technique examinera vos informations et vous contactera sous peu."
+                }
+            };
+
+            var currentLang = 'en';
+
+            function setLanguage(lang) {
+                var t = translations[lang];
+                if (!t) { return; }
+                currentLang = lang;
+
+                document.documentElement.lang = lang;
+                var en = document.getElementById('lang-en');
+                var fr = document.getElementById('lang-fr');
+                if (en && fr) {
+                    en.className = 'lang-btn' + (lang === 'en' ? ' is-active' : '');
+                    fr.className = 'lang-btn' + (lang === 'fr' ? ' is-active' : '');
+                }
+
+                /* innerHTML, not innerText: several strings carry markup (&mdash;, <strong>) */
+                var nodes = document.querySelectorAll('[data-i18n]');
+                for (var i = 0; i < nodes.length; i++) {
+                    var key = nodes[i].getAttribute('data-i18n');
+                    if (t[key]) { nodes[i].innerHTML = t[key]; }
+                }
+                ['nda_term1', 'nda_term2', 'nda_term3'].forEach(function (id) {
+                    var el = document.getElementById(id);
+                    if (el && t[id]) { el.innerHTML = t[id]; }
+                });
+            }
+
+            /* ---- NDA modal --------------------------------------------------- */
+            function openNdaModal(event) {
+                if (event) { event.preventDefault(); }
+                document.getElementById('ndaModal').classList.add('is-open');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeNdaModal() {
+                document.getElementById('ndaModal').classList.remove('is-open');
+                document.body.style.overflow = '';
+            }
+
+            function handleNdaSubmit(event) {
+                event.preventDefault();
+                alert(translations[currentLang].alert_submit.replace(/&#39;/g, "'"));
+                event.target.reset();
+                closeNdaModal();
+            }
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') { closeNdaModal(); }
+            });
+        </script>
+    </body>
+</html>
